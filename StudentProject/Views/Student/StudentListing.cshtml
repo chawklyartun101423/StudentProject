@@ -1,0 +1,91 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* @model List<Student>
+<h1>List of Students</h1>
+<div style="text-align: right;">
+	<form asp-controller="Student" asp-action="AddStudent">
+		<button type="submit" class="btn btn-primary">Add New Student</button>
+	</form>
+</div>
+<table id="student-Table" class="table" align="center">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Email
+			</th>
+			<th>
+				Phone Number
+			</th>
+			<th>
+				Edit
+			</th>
+			<th>
+				Delete
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var Student in Model)
+		{
+			<tr>
+				<td>
+					@Student.Id
+				</td>
+				<td>
+					@Student.Name
+				</td>
+				<td>
+					@Student.Email
+				</td>
+				<td>
+					@Student.PhoneNumber
+				</td>
+				<td>
+
+					<a asp-controller="Student" asp-action="EditStudent" asp-route-id="@Student.Id">
+						<button type="submit" class="btn btn-primary">Edit</button>
+					</a>
+				</td>
+				<td>
+					<a asp-controller="Student" asp-action="DeleteStudent" asp-route-id="@Student.Id">
+						<button type="submit" class="btn btn-primary">Delete</button>
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+</table>
+ *@
+
+<div class="card-body table-responsive">
+	<table id="student-Table" class="table" cellspacing="0"
+		   style="width:100%">
+		<thead>
+			<tr>
+				<th class="text-center">Id</th>
+				<th class="text-start">Name</th>
+				<th style="width: 150px;" class="text-start">Email</th>
+				<th class="text-start">Phone Number</th>
+				<th>action</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+@section Scripts {
+
+	<script src="~/js/Student.js"></script>
+@* 	<script>
+		$(document).ready(function () {
+			showMessage("@TempData["Message"]");
+		});
+	</script> *@
+}
