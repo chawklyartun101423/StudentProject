@@ -6,26 +6,26 @@
 @model Student
 <h2>Edit Student Information</h2>
 <form asp-controller="Student" asp-action="Update" method="post">
-    <input type="hidden" asp-for="@Model.Id" />
-    <div class="mt-3">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" id="Name" asp-for="@Model.Name" />
-    </div>
+	<input type="hidden" asp-for="@Model.Id" />
+	<div class="mt-3">
+		<label class="form-label">Name</label>
+		<input type="text" class="form-control" id="Name" asp-for="@Model.Name" />
+	</div>
 
-    <div class="mt-3">
-        <label class="form-label">Email</label>
-        <input type="text" class="form-control" id="Email" asp-for="@Model.Email" />
-    </div>
+	<div class="mt-3">
+		<label class="form-label">Email</label>
+		<input type="text" class="form-control" id="Email" asp-for="@Model.Email" />
+	</div>
 
-    <div class="mt-3">
-        <label class="form-label">Phone Number</label>
-        <input type="text" class="form-control" id="PhoneNumber" asp-for="@Model.PhoneNumber" />
-    </div>
+	<div class="mt-3">
+		<label class="form-label">Phone Number</label>
+		<input type="text" class="form-control" id="PhoneNumber" asp-for="@Model.PhoneNumber" />
+	</div>
 
 
-    <div class="mt-3">
-        <button type="submit" class="btn btn-primary">Update</button>
-        <button type="submit" class="btn btn-primary" asp-controller="Student" asp-action="StudentListing">Back</button>
+	<div class="mt-3">
+		<button type="submit" class="btn btn-primary">Update</button>
+		<button type="submit" class="btn btn-primary" asp-controller="Student" asp-action="StudentListing">Back</button>
 
-    </div>
-    </form>
+	</div>
+</form>
